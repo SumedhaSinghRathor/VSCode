@@ -83,7 +83,7 @@ function Project() {
           {projects.map((p, i) => (
             <div key={i}>
               <div className="flex gap-4">
-                <div className="text-white/40 border text-sm w-fit h-fit p-2 border-black rounded-full flex items-center justify-center">
+                <div className="text-white/40 border text-sm w-fit h-fit p-2 border-black/50 rounded-full flex items-center justify-center">
                   {(i + 1).toString().padStart(2, "0")}
                 </div>
                 <div className="flex flex-col">
