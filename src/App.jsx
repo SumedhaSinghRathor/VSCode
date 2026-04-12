@@ -41,7 +41,7 @@ function App() {
 
   return (
     <section className="w-screen h-screen flex flex-col overflow-hidden justify-between">
-      <section className="flex justify-between items-center px-2 py-1 bg-[#3c3c3c] text-white text-sm">
+      <section className="flex justify-between items-center px-2 py-1 bg-[#3c3c3c] text-white text-sm relative">
         <div className="flex items-center">
           <img src={VsCode} alt="VsCode img" className="size-4" />
           <ul className="pl-2 gap-2 hidden md:flex">
@@ -62,7 +62,9 @@ function App() {
             )}
           </ul>
         </div>
-        <div className="">Sumedha Singh Rathor - Visual Studio Code</div>
+        <div className="absolute w-full text-center">
+          Sumedha Singh Rathor - Visual Studio Code
+        </div>
         <div className="flex gap-2">
           <div className="size-3 bg-green-400 rounded-full" />
           <div className="size-3 bg-yellow-400 rounded-full" />
