@@ -6,6 +6,11 @@ function Project() {
       skills: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
     },
     {
+      title: "ATS Resume Analyzer",
+      description: `An ATS (Applicant Tracking System) resume analyzer is a tool that simulates how employers' software scans and ranks your resume. It identifies issues that might cause your application to be automatically rejected, such as unreadable formatting or missing keywords.`,
+      skills: ["Streamlit", "FastAPI", "Ollama", "Langchain"],
+    },
+    {
       title: "random-react-projects",
       description: `A collection of diverse web projects brought to life with smooth, expressive animations using Framer Motion.`,
       skills: ["React.js", "Tailwind CSS", "Framer Motion"],
@@ -72,7 +77,7 @@ function Project() {
           style={{
             borderLeft: "1px solid",
             borderImage:
-              "linear-gradient(to bottom, transparent, #007acc, transparent) 1",
+              "linear-gradient(to bottom, transparent, #007acc, #007acc, #007acc, transparent) 1",
           }}
         >
           {projects.map((p, i) => (

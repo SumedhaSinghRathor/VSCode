@@ -27,6 +27,7 @@ function App() {
 
   const [terminal, setTerminal] = useState(false);
   const [directory, setDirectory] = useState(true);
+  const [terminalHeight, setTerminalHeight] = useState(192);
 
   useEffect(() => {
     const handleKey = (e) => {
@@ -191,7 +192,12 @@ function App() {
                 <Route path="/resume" element={<Resume />} />
               </Routes>
             </div>
-            <Terminal terminal={terminal} setTerminal={setTerminal} />
+            <Terminal
+              terminal={terminal}
+              setTerminal={setTerminal}
+              height={terminalHeight}
+              setHeight={setTerminalHeight}
+            />
           </main>
         </section>
       </section>

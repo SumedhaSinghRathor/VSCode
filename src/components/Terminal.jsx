@@ -1,8 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Terminal({ terminal, setTerminal }) {
+function Terminal({ terminal, setTerminal, height, setHeight }) {
   const inputRef = useRef(null);
+  const isDragging = useRef(false);
+  const handleMouseDown = () => {
+    isDragging.current = true;
+  };
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    const newHeight = window.innerHeight - e.clientY;
+
+    if (newHeight < 100) return;
+    if (newHeight > window.innerHeight * 0.5) return;
+
+    setHeight(newHeight);
+  };
+  const handleMouseUp = () => {
+    isDragging.current = false;
+  };
+
   const containerRef = useRef(null);
   function handleClick() {
     inputRef.current.focus();
@@ -50,6 +67,11 @@ because I spend the most of time here anyway.`;
           "/articles",
           "/resume",
         ];
+
+        if (args.length === 0) {
+          output = `Available routes: \n${validRoutes.join("\n")}`;
+          break;
+        }
 
         if (validRoutes.includes(formattedPath)) {
           navigate(formattedPath);
@@ -147,9 +169,15 @@ Navigate to the contacts section to find more`;
 
   return (
     <div
-      className={`ide text-sm absolute w-full h-48 bottom-0 border border-dark-grey bg-grey z-10 ${!terminal && "hidden"}`}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      className={`ide text-sm absolute w-full bottom-0 border border-dark-grey bg-grey z-10 ${!terminal && "hidden"}`}
+      style={{ height }}
     >
-      <div className="h-0.5 cursor-row-resize bg-white/20 hover:bg-white/40" />
+      <div
+        onMouseDown={handleMouseDown}
+        className="h-1 cursor-row-resize bg-white/20 hover:bg-white/40"
+      />
       <div className="p-1 flex justify-between border-b border-dark-grey">
         <span className="flex items-center gap-2 grow">
           <i className="bx bx-terminal text-xl" /> Terminal
