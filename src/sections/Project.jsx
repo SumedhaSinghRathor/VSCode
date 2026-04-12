@@ -1,58 +1,63 @@
 function Project() {
   const projects = [
-    {
-      title: "what-is-shoujo",
-      description: `What-is-Shoujo? is MERN stack web app that serves as a searchable database for Shoujo manga (demographic aimed at young women) with genre filters. It also acts as a personal reading tracker, letting users log progress, manage lists, and view detailed info.`,
-      skills: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
-    },
-    {
-      title: "ATS Resume Analyzer",
-      description: `An ATS (Applicant Tracking System) resume analyzer is a tool that simulates how employers' software scans and ranks your resume. It identifies issues that might cause your application to be automatically rejected, such as unreadable formatting or missing keywords.`,
-      skills: ["Streamlit", "FastAPI", "Ollama", "Langchain"],
-    },
+    // {
+    //   title: "what-is-shoujo",
+    //   description: `What-is-Shoujo? is MERN stack web app that serves as a searchable database for Shoujo manga (demographic aimed at young women) with genre filters. It also acts as a personal reading tracker, letting users log progress, manage lists, and view detailed info.`,
+    //   skills: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
+    // },
+    // {
+    //   title: "ATS Resume Analyzer",
+    //   description: `An ATS (Applicant Tracking System) resume analyzer is a tool that simulates how employers' software scans and ranks your resume. It identifies issues that might cause your application to be automatically rejected, such as unreadable formatting or missing keywords.`,
+    //   skills: ["Streamlit", "FastAPI", "Ollama", "Langchain"],
+    // },
     {
       title: "random-react-projects",
       description: `A collection of diverse web projects brought to life with smooth, expressive animations using Framer Motion.`,
       skills: ["React.js", "Tailwind CSS", "Framer Motion"],
+      link: "https://random-react-projects.vercel.app/",
     },
-    {
-      title: "personal-music",
-      description: `An animated music showcase that elegantly presents my favorite albums using smooth transitions and motion effects, powered by real-time data from the Spotify API. It blends visual flair with dynamic content to create an immersive listening-inspired experience.`,
-      skills: ["React.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    },
+    // {
+    //   title: "personal-music",
+    //   description: `An animated music showcase that elegantly presents my favorite albums using smooth transitions and motion effects, powered by real-time data from the Spotify API. It blends visual flair with dynamic content to create an immersive listening-inspired experience.`,
+    //   skills: ["React.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
+    // },
     {
       title: "personal-portfolio",
       description: `Contains the the code and necessary items used in the portfolio. This website is made using only React.js (using the GSAP library for animations).`,
       skills: ["React.js", "GSAP", "Tailwind CSS"],
+      link: "https://sumedhasinghrathor.vercel.app/",
     },
-    {
-      title: "notes-ki-dukaan",
-      description: `A new note sharing app called "Notes Ki Dukaan" where students can upload their own notes as well as view, rate and download notes from other faculties. Our powerful sorting and searching features will help students in organizing their notes and being prepared for their exams and sessionals.`,
-      skills: ["MongoDB", "Spring Boot", "React.js", "Tailwind CSS"],
-    },
-    {
-      title: "Stock Predictor",
-      description:
-        "A full-stack web application that fetches historical stock data, stores it in a database, and uses an LSTM (Long Short-Term Memory) deep learning model to predict future stock prices. Built with Flask for the backend, React for the frontend, and TensorFlow/Keras for the prediction logic.",
-      skills: ["Flask", "React.js", "LSTM", "Tailwind CSS", "PostgreSQL"],
-    },
+    // {
+    //   title: "notes-ki-dukaan",
+    //   description: `A new note sharing app called "Notes Ki Dukaan" where students can upload their own notes as well as view, rate and download notes from other faculties. Our powerful sorting and searching features will help students in organizing their notes and being prepared for their exams and sessionals.`,
+    //   skills: ["MongoDB", "Spring Boot", "React.js", "Tailwind CSS"],
+    // },
+    // {
+    //   title: "Stock Predictor",
+    //   description:
+    //     "A full-stack web application that fetches historical stock data, stores it in a database, and uses an LSTM (Long Short-Term Memory) deep learning model to predict future stock prices. Built with Flask for the backend, React for the frontend, and TensorFlow/Keras for the prediction logic.",
+    //   skills: ["Flask", "React.js", "LSTM", "Tailwind CSS", "PostgreSQL"],
+    // },
     {
       title: "Tetris Game",
       description:
         "Tetris Game Clone created with p5.js, players complete lines by moving differently shaped pieces, which descend onto the playing field. The completed lines disappear and grant the player points, and the player can proceed to fill the vacated spaces. The game ends when the uncleared lines reach the top of the playing field.",
       skills: ["HTML/CSS", "JavaScript", "p5.js"],
+      link: "https://sumedhasinghrathor.github.io/TetrisGame/",
     },
     {
       title: "Weather App",
       description:
         "This weather app, built with the OpenWeatherMap API and React.js, features allows users to easily access current conditions, humidity, and temperature for any location.",
       skills: ["React.js", "Tailwind CSS"],
+      link: "https://sumedhasinghrathor-weatherdashboard.vercel.app/",
     },
     {
       title: "Sliding Puzzle",
       description:
         "Created with Java, a sliding puzzle is a combination puzzle that challenges a player to slide pieces along certain routes to establish a certain end-configuration. The pieces to be moved consist of numbers from 1 to 15.",
       skills: ["Java", "Swing Framework"],
+      link: "",
     },
   ];
 
@@ -87,7 +92,9 @@ function Project() {
                   {(i + 1).toString().padStart(2, "0")}
                 </div>
                 <div className="flex flex-col">
-                  <h1 className="text-xl my-1.5">{p.title}</h1>
+                  <a href={p.link} target="_blank" className="text-xl my-1.5">
+                    {p.title}
+                  </a>
                   <p className="text-sm text-white/60">{p.description}</p>
                   <div className="text-sm flex gap-2 mt-2">
                     {p.skills.sort((a, b) => a.localeCompare(b)).join(" • ")}
