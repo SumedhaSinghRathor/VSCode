@@ -12,6 +12,8 @@ import Contact from "./sections/Contact";
 import Project from "./sections/Project";
 import Articles from "./sections/Articles";
 import Github from "./sections/Github";
+import Terminal from "./components/Terminal";
+import { useState } from "react";
 
 function App() {
   const files = [
@@ -22,6 +24,8 @@ function App() {
     { file: Json, link: "/articles", fileName: "articles.json" },
     { file: MD, link: "/github", fileName: "github.md" },
   ];
+
+  const [terminal, setTerminal] = useState(false);
 
   return (
     <section className="w-screen h-screen flex flex-col overflow-hidden justify-between">
@@ -40,9 +44,9 @@ function App() {
         </div>
         <div className="">Sumedha Singh Rathor - Visual Studio Code</div>
         <div className="flex gap-2">
-          <div className="size-3 bg-green-400 rounded-full"></div>
-          <div className="size-3 bg-yellow-400 rounded-full"></div>
-          <div className="size-3 bg-red-400 rounded-full"></div>
+          <div className="size-3 bg-green-400 rounded-full" />
+          <div className="size-3 bg-yellow-400 rounded-full" />
+          <div className="size-3 bg-red-400 rounded-full" />
         </div>
       </section>
       <section className="flex flex-1 min-h-0">
@@ -143,21 +147,24 @@ function App() {
             ))}
           </nav>
           <main
-            className="bg-dark-grey flex-1 min-h-0 overflow-y-auto"
+            className="bg-dark-grey flex-1 min-h-0 relative flex flex-col"
             style={{ scrollbarColor: "#3c3c3c #1e1e1e" }}
           >
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/projects" element={<Project />} />
-              <Route path="/articles" element={<Articles />} />
-              <Route path="/github" element={<Github />} />
-            </Routes>
+            <div className="flex-1 min-h-0 overflow-y-auto">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/projects" element={<Project />} />
+                <Route path="/articles" element={<Articles />} />
+                <Route path="/github" element={<Github />} />
+              </Routes>
+            </div>
+            <Terminal terminal={terminal} setTerminal={setTerminal} />
           </main>
         </section>
       </section>
-      <footer className="bg-blue text-white w-full text-sm px-2 flex items-center justify-between">
+      <footer className="bg-blue text-white w-full text-sm px-2 flex items-center justify-between z-10">
         <div className="flex gap-2">
           <a
             href="https://github.com/SumedhaSinghRathor/VSCode"
@@ -171,7 +178,10 @@ function App() {
           </div>
         </div>
         <div className="flex gap-1">
-          <div className="hover:bg-light-blue px-1.5 py-0.5 flex items-center justify-center text-base">
+          <div
+            onClick={() => setTerminal(!terminal)}
+            className={`hover:bg-light-blue px-1.5 py-0.5 flex items-center justify-center text-base ${terminal && "bg-light-blue"}`}
+          >
             <i className="bx bx-terminal" />
           </div>
           <div className="hover:bg-light-blue px-1.5 py-0.5 flex items-center gap-1">

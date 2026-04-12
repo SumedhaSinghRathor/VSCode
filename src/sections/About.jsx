@@ -90,13 +90,13 @@ function About() {
               href="https://github.com/SumedhaSinghRathor"
               className="flex p-2 border border-black/60 bg-white/10 rounded-lg"
             >
-              <i class="bx bxl-github text-3xl text-white/70" />
+              <i className="bx bxl-github text-3xl text-white/70" />
             </a>
             <Link
               to="/contact"
               className="flex p-2 border border-black/60 bg-white/10 rounded-lg"
             >
-              <i class="bx bx-envelope text-3xl text-white/70" />
+              <i className="bx bx-envelope text-3xl text-white/70" />
             </Link>
           </div>
         </div>
