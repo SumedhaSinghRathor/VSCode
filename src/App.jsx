@@ -44,7 +44,7 @@ function App() {
       <section className="flex justify-between items-center px-2 py-1 bg-[#3c3c3c] text-white text-sm">
         <div className="flex items-center">
           <img src={VsCode} alt="VsCode img" className="size-4" />
-          <ul className="flex pl-2 gap-2">
+          <ul className="pl-2 gap-2 hidden md:flex">
             {["File", "Edit", "View", "Go", "Run", "Terminal", "Help"].map(
               (f) => (
                 <li
@@ -129,7 +129,7 @@ function App() {
             <i className="bx bx-user-circle text-4xl" />
           </NavLink>
         </section>
-        <section className="bg-grey text-white w-fit">
+        <section className="bg-grey text-white w-fit hidden md:visible">
           <div className="uppercase font-light px-4 py-2 text-sm">EXPLORER</div>
           <div className="flex items-center w-48">
             <i className="bx bx-chevron-right" />{" "}
@@ -151,7 +151,7 @@ function App() {
           </div>
         </section>
         <section className="bg-dark-grey text-white w-full flex flex-col flex-1 min-h-0">
-          <nav className="bg-grey flex">
+          <nav className="bg-grey flex overflow-x-auto">
             {files.map((f, i) => (
               <NavLink
                 to={f.link}

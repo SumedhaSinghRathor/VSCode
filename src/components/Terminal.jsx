@@ -1,13 +1,15 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Terminal({ terminal, setTerminal }) {
   const inputRef = useRef(null);
+  const containerRef = useRef(null);
   function handleClick() {
     inputRef.current.focus();
   }
 
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(null);
 
   const handleCommand = (cmd) => {
     const parts = cmd.trim().split(" ");
@@ -54,7 +56,7 @@ Navigate to the projects section to find more`;
         break;
 
       case "contact":
-        output: `Contact Information:
+        output = `Contact Information:
 - Email: sumedharathor@gmail.com
 - Website: sumedhasinghrathor.vercel.app
 - Github: github.com/SumedhaSinghRathor
@@ -88,8 +90,42 @@ Navigate to the contacts section to find more`;
     if (e.key === "Enter") {
       handleCommand(input);
       setInput("");
+      setHistoryIndex(null);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+
+      if (history.length === 0) return;
+
+      const newIndex =
+        historyIndex === null
+          ? history.length - 1
+          : Math.max(0, historyIndex - 1);
+
+      setHistoryIndex(newIndex);
+      setInput(history[newIndex].command);
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+
+      if (history.length === 0) return;
+      if (historyIndex === null) return;
+
+      const newIndex = historyIndex + 1;
+
+      if (newIndex >= history.length) {
+        setHistoryIndex(null);
+        setInput("");
+      } else {
+        setHistoryIndex(newIndex);
+        setInput(history[newIndex].command);
+      }
     }
   };
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+  }, [history]);
 
   return (
     <div
@@ -109,6 +145,7 @@ Navigate to the contacts section to find more`;
         />
       </div>
       <div
+        ref={containerRef}
         className="text-[13px] p-1.5 overflow-y-auto h-[calc(100% - 32px)] h-full"
         onClick={handleClick}
       >

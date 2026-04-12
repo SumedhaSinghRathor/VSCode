@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <section className="ide p-12">
-      <div className="w-2xl mx-auto flex flex-col gap-5 items-center">
+      <div className="max-w-2xl w-full mx-auto flex flex-col gap-5 items-center">
         <i className="bx text-xl bx-code-alt text-blue" />
         <h3 className="uppercase">Hello, I'm</h3>
         <h1 className="text-4xl font-bold">Sumedha Singh Rathor</h1>

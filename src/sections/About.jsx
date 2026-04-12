@@ -82,7 +82,7 @@ function About() {
 
   return (
     <section className="ide p-12">
-      <div className="w-3xl mx-auto">
+      <div className="max-w-3xl w-full mx-auto">
         <div className="flex justify-between">
           <h1 className="text-3xl">Sumedha Singh Rathor</h1>
           <div className="flex gap-2">
