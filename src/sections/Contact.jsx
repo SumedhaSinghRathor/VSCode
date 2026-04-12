@@ -39,14 +39,14 @@ function Contact() {
 
   return (
     <div className="ide flex flex-col gap-8 items-center p-12">
-      <h1 className="text-[#007acc] font-bold text-3xl">Contact Me</h1>
+      <h1 className="text-blue font-bold text-3xl">Contact Me</h1>
       <p className="text-center w-xl">
         Feel free to reach out to me through any of the social platforms below.
         I'm always open to new opportunities and connections.
       </p>
-      <div className="bg-[#252526] w-lg border border-[#007acc]/30 border-t-4 border-t-[#007acc] rounded p-4">
+      <div className="bg-grey w-lg border border-blue/30 border-t-4 border-t-blue rounded p-4">
         <p className="before:content-['1'] before:pr-8 before:text-sm before:text-white/40">
-          <span className="text-[#007acc]">.socials</span> &#123;
+          <span className="text-blue">.socials</span> &#123;
         </p>
         {contacts.map((c, index) => (
           <p
@@ -59,7 +59,7 @@ function Contact() {
               href={c.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#007acc] hover:underline"
+              className="text-blue hover:underline"
             >
               {c.content}
             </a>

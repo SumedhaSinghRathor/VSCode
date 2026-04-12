@@ -102,7 +102,7 @@ function App() {
             <i className="bx bx-user-circle text-4xl" />
           </NavLink>
         </section>
-        <section className="bg-[#252526] text-white w-fit">
+        <section className="bg-grey text-white w-fit">
           <div className="uppercase font-light px-4 py-2 text-sm">EXPLORER</div>
           <div className="flex items-center w-48">
             <i className="bx bx-chevron-right" />{" "}
@@ -123,8 +123,8 @@ function App() {
             ))}
           </div>
         </section>
-        <section className="bg-[#1e1e1e] text-white w-full flex flex-col flex-1 min-h-0">
-          <nav className="bg-[#252526] flex">
+        <section className="bg-dark-grey text-white w-full flex flex-col flex-1 min-h-0">
+          <nav className="bg-grey flex">
             {files.map((f, i) => (
               <NavLink
                 to={f.link}
@@ -143,7 +143,7 @@ function App() {
             ))}
           </nav>
           <section
-            className="bg-[#1e1e1e] flex-1 min-h-0 overflow-y-auto"
+            className="bg-dark-grey flex-1 min-h-0 overflow-y-auto"
             style={{ scrollbarColor: "#3c3c3c #1e1e1e" }}
           >
             <Routes>
@@ -157,20 +157,25 @@ function App() {
           </section>
         </section>
       </section>
-      <footer className="bg-[#007acc] text-white w-full text-sm px-2 flex items-center">
+      <footer className="bg-blue text-white w-full text-sm px-2 flex items-center justify-between">
         <div className="flex gap-2">
           <a
             href="https://github.com/SumedhaSinghRathor/VSCode"
             target="_blank"
-            className="flex items-center hover:bg-[#1f8ad2] w-fit h-full px-1.5 py-0.5 gap-1"
+            className="flex items-center hover:bg-light-blue w-fit h-full px-1.5 py-0.5 gap-1"
           >
             <i className="bx bx-git-branch" /> main
           </a>
-          <div className="flex items-center gap-0.5 hover:bg-[#1f8ad2] px-1.5 py-0.5">
+          <div className="flex items-center gap-0.5 hover:bg-light-blue px-1.5 py-0.5">
             <i className="bx bx-x-circle" /> 0<i className="bx bx-error" /> 0
           </div>
-          <div className="hover:bg-[#1f8ad2] px-1.5 py-0.5 flex items-center justify-center text-base">
+        </div>
+        <div className="flex gap-1">
+          <div className="hover:bg-light-blue px-1.5 py-0.5 flex items-center justify-center text-base">
             <i className="bx bx-terminal" />
+          </div>
+          <div className="hover:bg-light-blue px-1.5 py-0.5 flex items-center gap-1">
+            <i className="bx bxl-react" /> Powered with React
           </div>
         </div>
       </footer>

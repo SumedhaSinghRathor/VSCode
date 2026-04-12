@@ -93,11 +93,11 @@ function About() {
         </div>
         <p className="text-white/80">Trainee Analyst at Wissen Technology</p>
         <div className="flex items-center gap-2">
-          <div className="size-3 bg-[#007acc] rounded-full" />
+          <div className="size-3 bg-blue rounded-full" />
           <p className="text-sm leading-8 text-white/60">Bengaluru, India</p>
         </div>
         <hr className="text-black/40 my-8" />
-        <div className="flex before:content-['01'] before:text-[#007acc]/60 before:text-xl items-start gap-4">
+        <div className="flex before:content-['01'] before:text-blue/60 before:text-xl items-start gap-4">
           <div className="flex flex-col gap-4">
             <h2 className="font-bold text-xl">About</h2>
             <p className="text-sm text-white/70">
@@ -117,16 +117,16 @@ function About() {
             </p>
           </div>
         </div>
-        <div className="flex before:content-['02'] before:text-[#007acc]/60 before:text-xl items-start gap-4 my-8">
+        <div className="flex before:content-['02'] before:text-blue/60 before:text-xl items-start gap-4 my-8">
           <div className="flex flex-col gap-4 w-full">
             <h2 className="font-bold text-xl">Experience</h2>
             {experience.toReversed().map((p, idx) => (
               <div
                 key={p.company}
-                className="border border-black/70 rounded-xl w-full p-6 hover:border-[#007acc]/60 transition-colors"
+                className="border border-black/70 rounded-xl w-full p-6 hover:border-blue/60 transition-colors"
               >
                 {idx == 0 && (
-                  <div className="text-sm text-[#007acc] bg-[#007acc]/20 w-fit px-2 py-1 rounded mb-2">
+                  <div className="text-sm text-blue bg-blue/20 w-fit px-2 py-1 rounded mb-2">
                     Current
                   </div>
                 )}
@@ -141,7 +141,7 @@ function About() {
             ))}
           </div>
         </div>
-        <div className="flex before:content-['03'] before:text-[#007acc]/60 before:text-xl items-start gap-4 my-8">
+        <div className="flex before:content-['03'] before:text-blue/60 before:text-xl items-start gap-4 my-8">
           <div className="flex flex-col gap-4 w-full">
             <h2 className="font-bold text-xl">Skills</h2>
             <div className="grid grid-cols-2 gap-4 text-sm">
@@ -153,7 +153,7 @@ function About() {
                   <p className="uppercase text-white/50 mb-2">{s.content}</p>
                   <div className="flex flex-wrap gap-2">
                     {s.list.map((l) => (
-                      <div className="border border-white/30 hover:bg-[#007acc]/30 hover:border-[#007acc] hover:text-[#007acc] text-white/80 bg-white/5 px-3 py-1 w-fit rounded-lg transition-colors duration-150">
+                      <div className="border border-white/30 hover:bg-blue/30 hover:border-blue hover:text-blue text-white/80 bg-white/5 px-3 py-1 w-fit rounded-lg transition-colors duration-150">
                         {l}
                       </div>
                     ))}
@@ -163,7 +163,7 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="flex before:content-['04'] before:text-[#007acc]/60 before:text-xl items-start gap-4 my-8">
+        <div className="flex before:content-['04'] before:text-blue/60 before:text-xl items-start gap-4 my-8">
           <div className="flex flex-col gap-4 w-full">
             <h2 className="font-bold text-xl">Beyond Code</h2>
             <p className="text-sm text-white/70">
