@@ -30,6 +30,15 @@ function About() {
         "Mentored over 20+ juniors under the UI/UX domain",
       ],
     },
+    {
+      designation: "Trainee Analyst",
+      company: "Wissen Technology",
+      description: [
+        `As an intern you will be working on some of the any of our company projects.`,
+        `You shall also be expected to perform duties which are customarily associated with such positions.`,
+        `The assignment details will be shared with you once you join.`,
+      ],
+    },
   ];
 
   const skills = [

@@ -142,7 +142,7 @@ function App() {
               </NavLink>
             ))}
           </nav>
-          <section
+          <main
             className="bg-dark-grey flex-1 min-h-0 overflow-y-auto"
             style={{ scrollbarColor: "#3c3c3c #1e1e1e" }}
           >
@@ -154,7 +154,7 @@ function App() {
               <Route path="/articles" element={<Articles />} />
               <Route path="/github" element={<Github />} />
             </Routes>
-          </section>
+          </main>
         </section>
       </section>
       <footer className="bg-blue text-white w-full text-sm px-2 flex items-center justify-between">
