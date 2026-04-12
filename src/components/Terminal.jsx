@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Terminal({ terminal, setTerminal }) {
   const inputRef = useRef(null);
@@ -10,6 +11,7 @@ function Terminal({ terminal, setTerminal }) {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(null);
+  const navigate = useNavigate();
 
   const handleCommand = (cmd) => {
     const parts = cmd.trim().split(" ");
@@ -27,7 +29,6 @@ function Terminal({ terminal, setTerminal }) {
   projects  - View my projects
   contact   - Contact Information
   date      - Show current date
-  echo      - Echo text (usage: echo <text>)
   clear     - Clear terminal`;
         break;
 
@@ -36,6 +37,27 @@ function Terminal({ terminal, setTerminal }) {
 A passionate full-stack developer who loves building beautiful,
 functional web applications. This portfolio is styled like VS Code 
 because I spend the most of time here anyway.`;
+        break;
+
+      case "cd":
+        const path = args[0] || "/";
+        const formattedPath = path.startsWith("/") ? path : `/${path}`;
+        const validRoutes = [
+          "/",
+          "/about",
+          "/contact",
+          "/projects",
+          "/articles",
+          "/resume",
+        ];
+
+        if (validRoutes.includes(formattedPath)) {
+          navigate(formattedPath);
+          output = `Navigated to ${formattedPath}`;
+        } else {
+          output = `cd: no such route: ${path}`;
+        }
+
         break;
 
       case "skills":
@@ -65,10 +87,6 @@ Navigate to the contacts section to find more`;
 
       case "date":
         output = new Date().toString();
-        break;
-
-      case "echo":
-        output = args.join(" ") || "";
         break;
 
       case "clear":
@@ -151,6 +169,7 @@ Navigate to the contacts section to find more`;
       >
         <p>Welcome to the interactive terminal!</p>
         <p>Type "help" for available commands.</p>
+        <p>Press Ctrl + ` to toggle the terminal</p>
         {history.map((item, i) => (
           <div key={i} className="mb-2 w-full">
             <div className="text-blue">$ {item.command}</div>

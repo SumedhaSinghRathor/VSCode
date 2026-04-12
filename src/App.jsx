@@ -26,6 +26,7 @@ function App() {
   ];
 
   const [terminal, setTerminal] = useState(false);
+  const [directory, setDirectory] = useState(true);
 
   useEffect(() => {
     const handleKey = (e) => {
@@ -62,7 +63,7 @@ function App() {
             )}
           </ul>
         </div>
-        <div className="absolute w-full text-center">
+        <div className="absolute w-full text-center pointer-events-none">
           Sumedha Singh Rathor - Visual Studio Code
         </div>
         <div className="flex gap-2">
@@ -133,11 +134,16 @@ function App() {
         </section>
         <section className="bg-grey text-white w-fit hidden md:block">
           <div className="uppercase font-light px-4 py-2 text-sm">EXPLORER</div>
-          <div className="flex items-center w-48">
-            <i className="bx bx-chevron-right" />{" "}
+          <div
+            className="flex items-center w-48 select-none cursor-pointer"
+            onClick={() => setDirectory(!directory)}
+          >
+            <i
+              className={`bx ${directory ? "bx-chevron-down" : "bx-chevron-right"}`}
+            />{" "}
             <span className="uppercase">Portfolio</span>
           </div>
-          <div className="text-[15px]">
+          <div className={`text-[15px] ${!directory && "invisible"}`}>
             {files.map((f, i) => (
               <Link
                 to={f.link}
