@@ -92,7 +92,11 @@ function Project() {
                   {(i + 1).toString().padStart(2, "0")}
                 </div>
                 <div className="flex flex-col">
-                  <a href={p.link} target="_blank" className="text-xl my-1.5">
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    className="text-xl my-1.5 hover:underline"
+                  >
                     {p.title}
                   </a>
                   <p className="text-sm text-white/60">{p.description}</p>
