@@ -5,13 +5,11 @@ import React from "./assets/react.svg";
 import Html from "./assets/html.png";
 import Css from "./assets/css.png";
 import Js from "./assets/js.png";
-import Json from "./assets/json.svg";
 import MD from "./assets/Markdown.png";
 import Home from "./sections/Home";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Project from "./sections/Project";
-import Articles from "./sections/Articles";
 import Resume from "./sections/Resume";
 import Terminal from "./components/Terminal";
 
@@ -21,7 +19,6 @@ function App() {
     { file: Html, link: "/about", fileName: "about.html" },
     { file: Css, link: "/contact", fileName: "contact.css" },
     { file: Js, link: "/projects", fileName: "project.js" },
-    { file: Json, link: "/articles", fileName: "articles.json" },
     { file: MD, link: "/resume", fileName: "resume.md" },
   ];
 
@@ -72,6 +69,7 @@ function App() {
           <div className="size-3 bg-yellow-400 rounded-full" />
           <a
             href="https://www.google.com/"
+            title="Close the portfolio"
             className="size-3 bg-red-400 rounded-full cursor-pointer"
           />
         </div>
@@ -113,15 +111,6 @@ function App() {
             className="p-2"
           >
             <i className="bx bx-envelope text-4xl" />
-          </NavLink>
-          <NavLink
-            to="/articles"
-            style={({ isActive }) => ({
-              borderLeft: isActive ? "1px solid white" : "",
-            })}
-            className="p-2"
-          >
-            <i className="bx bx-pencil text-4xl" />
           </NavLink>
           <NavLink
             to="/about"
@@ -188,7 +177,6 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/projects" element={<Project />} />
-                <Route path="/articles" element={<Articles />} />
                 <Route path="/resume" element={<Resume />} />
               </Routes>
             </div>

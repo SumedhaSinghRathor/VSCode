@@ -46,7 +46,8 @@ function Terminal({ terminal, setTerminal, height, setHeight }) {
   projects  - View my projects
   contact   - Contact Information
   date      - Show current date
-  clear     - Clear terminal`;
+  clear     - Clear terminal
+  git       - Navigate to github`;
         break;
 
       case "about":
@@ -59,14 +60,7 @@ because I spend the most of time here anyway.`;
       case "cd":
         const path = args[0] || "/";
         const formattedPath = path.startsWith("/") ? path : `/${path}`;
-        const validRoutes = [
-          "/",
-          "/about",
-          "/contact",
-          "/projects",
-          "/articles",
-          "/resume",
-        ];
+        const validRoutes = ["/", "/about", "/contact", "/projects", "/resume"];
 
         if (args.length === 0) {
           output = `Available routes: \n${validRoutes.join("\n")}`;
@@ -89,6 +83,10 @@ because I spend the most of time here anyway.`;
   Backend: Express.js, Node.js, Spring Boot, Flask, FastAPI, MongoDB, PostgreSQL
   DevOps: Docker, Kubernetes, Git, GitHub, Jenkins
   Tools: Figma, Power BI, Tableau`;
+        break;
+
+      case "git":
+        window.location.replace("https://github.com/SumedhaSinghRathor");
         break;
 
       case "projects":
