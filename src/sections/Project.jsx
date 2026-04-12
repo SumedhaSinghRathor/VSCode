@@ -76,8 +76,8 @@ function Project() {
           }}
         >
           {projects.map((p, i) => (
-            <>
-              <div className="flex gap-4" key={i}>
+            <div key={i}>
+              <div className="flex gap-4">
                 <div className="text-white/40 border text-sm w-fit h-fit p-2 border-black rounded-full flex items-center justify-center">
                   {(i + 1).toString().padStart(2, "0")}
                 </div>
@@ -85,12 +85,12 @@ function Project() {
                   <h1 className="text-xl my-1.5">{p.title}</h1>
                   <p className="text-sm text-white/60">{p.description}</p>
                   <div className="text-sm flex gap-2 mt-2">
-                    {p.skills.sort((a, b) => a.localeCompare(b)).join(", ")}
+                    {p.skills.sort((a, b) => a.localeCompare(b)).join(" • ")}
                   </div>
                 </div>
               </div>
               <hr className="opacity-20 my-6" />
-            </>
+            </div>
           ))}
         </div>
       </div>

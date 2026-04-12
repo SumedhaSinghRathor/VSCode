@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
 import VsCode from "/Visual_Studio_Code_1.35_icon.png";
 import React from "./assets/react.svg";
@@ -13,7 +14,6 @@ import Project from "./sections/Project";
 import Articles from "./sections/Articles";
 import Github from "./sections/Github";
 import Terminal from "./components/Terminal";
-import { useState } from "react";
 
 function App() {
   const files = [
@@ -27,6 +27,18 @@ function App() {
 
   const [terminal, setTerminal] = useState(false);
 
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.ctrlKey && e.code === "Backquote") {
+        e.preventDefault();
+        setTerminal((prev) => !prev);
+      }
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   return (
     <section className="w-screen h-screen flex flex-col overflow-hidden justify-between">
       <section className="flex justify-between items-center px-2 py-1 bg-[#3c3c3c] text-white text-sm">
@@ -35,7 +47,15 @@ function App() {
           <ul className="flex pl-2 gap-2">
             {["File", "Edit", "View", "Go", "Run", "Terminal", "Help"].map(
               (f) => (
-                <li className="hover:bg-slate-100/30 px-1 rounded cursor-pointer">
+                <li
+                  key={f}
+                  onClick={() => {
+                    if (f === "Terminal") {
+                      setTerminal(!terminal);
+                    }
+                  }}
+                  className="hover:bg-slate-100/30 px-1 rounded cursor-pointer"
+                >
                   {f}
                 </li>
               ),
@@ -46,7 +66,10 @@ function App() {
         <div className="flex gap-2">
           <div className="size-3 bg-green-400 rounded-full" />
           <div className="size-3 bg-yellow-400 rounded-full" />
-          <div className="size-3 bg-red-400 rounded-full" />
+          <a
+            href="https://www.google.com/"
+            className="size-3 bg-red-400 rounded-full cursor-pointer"
+          />
         </div>
       </section>
       <section className="flex flex-1 min-h-0">
