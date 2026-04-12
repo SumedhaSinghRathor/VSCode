@@ -88,15 +88,15 @@ function About() {
           <div className="flex gap-2">
             <a
               href="https://github.com/SumedhaSinghRathor"
-              className="flex p-2 border border-black/60 bg-white/10 rounded-lg"
+              className="flex p-2 group border border-black/60 bg-white/10 rounded-lg hover:bg-blue/40 hover:border-blue/40 transition-all hover:-translate-y-0.5"
             >
-              <i className="bx bxl-github text-3xl text-white/70" />
+              <i className="bx bxl-github text-3xl text-white/70 group-hover:text-blue" />
             </a>
             <Link
               to="/contact"
-              className="flex p-2 border border-black/60 bg-white/10 rounded-lg"
+              className="flex p-2 group border border-black/60 bg-white/10 rounded-lg hover:bg-blue/40 hover:border-blue/40 transition-all hover:-translate-y-0.5"
             >
-              <i className="bx bx-envelope text-3xl text-white/70" />
+              <i className="bx bx-envelope text-3xl text-white/70 group-hover:text-blue" />
             </Link>
           </div>
         </div>
