@@ -131,7 +131,7 @@ function App() {
             <i className="bx bx-user-circle text-4xl" />
           </NavLink>
         </section>
-        <section className="bg-grey text-white w-fit hidden md:visible">
+        <section className="bg-grey text-white w-fit hidden md:block">
           <div className="uppercase font-light px-4 py-2 text-sm">EXPLORER</div>
           <div className="flex items-center w-48">
             <i className="bx bx-chevron-right" />{" "}
