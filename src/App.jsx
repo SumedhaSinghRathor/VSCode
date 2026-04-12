@@ -24,7 +24,7 @@ function App() {
   ];
 
   return (
-    <section className="w-screen h-screen flex flex-col justify-between">
+    <section className="w-screen h-screen flex flex-col overflow-hidden justify-between">
       <section className="flex justify-between items-center px-2 py-1 bg-[#3c3c3c] text-white text-sm">
         <div className="flex items-center">
           <img src={VsCode} alt="VsCode img" className="size-4" />
@@ -45,23 +45,62 @@ function App() {
           <div className="size-3 bg-red-400 rounded-full"></div>
         </div>
       </section>
-      <section className="flex grow">
-        <section className="bg-[#333333] text-white w-fit">
-          <div className="border-l-2 border-l-white p-2">
+      <section className="flex flex-1 min-h-0">
+        <section className="bg-[#333333] text-white w-fit flex flex-col">
+          <NavLink
+            to="/"
+            style={({ isActive }) => ({
+              borderLeft: isActive ? "1px solid white" : "",
+            })}
+            className="p-2"
+          >
             <i className="bx bx-folder text-4xl" />
-          </div>
-          <div className="p-2">
+          </NavLink>
+          <NavLink
+            to="/github"
+            style={({ isActive }) => ({
+              borderLeft: isActive ? "1px solid white" : "",
+            })}
+            className="p-2"
+          >
             <i className="bx bxl-github text-4xl" />
-          </div>
-          <div className="p-2">
+          </NavLink>
+          <NavLink
+            to="/projects"
+            style={({ isActive }) => ({
+              borderLeft: isActive ? "1px solid white" : "",
+            })}
+            className="p-2"
+          >
             <i className="bx bx-code-alt text-4xl" />
-          </div>
-          <div className="p-2">
+          </NavLink>
+          <NavLink
+            to="/contact"
+            style={({ isActive }) => ({
+              borderLeft: isActive ? "1px solid white" : "",
+            })}
+            className="p-2"
+          >
             <i className="bx bx-envelope text-4xl" />
-          </div>
-          <div className="p-2">
+          </NavLink>
+          <NavLink
+            to="/articles"
+            style={({ isActive }) => ({
+              borderLeft: isActive ? "1px solid white" : "",
+            })}
+            className="p-2"
+          >
             <i className="bx bx-pencil text-4xl" />
-          </div>
+          </NavLink>
+          <NavLink
+            to="/about"
+            style={({ isActive }) => ({
+              borderLeft: isActive ? "1px solid white" : "",
+            })}
+            className="p-2"
+          >
+            <i className="bx bx-user-circle text-4xl" />
+          </NavLink>
         </section>
         <section className="bg-[#252526] text-white w-fit">
           <div className="uppercase font-light px-4 py-2 text-sm">EXPLORER</div>
@@ -84,7 +123,7 @@ function App() {
             ))}
           </div>
         </section>
-        <section className="bg-[#1e1e1e] text-white w-full flex flex-col">
+        <section className="bg-[#1e1e1e] text-white w-full flex flex-col flex-1 min-h-0">
           <nav className="bg-[#252526] flex">
             {files.map((f, i) => (
               <NavLink
@@ -103,7 +142,10 @@ function App() {
               </NavLink>
             ))}
           </nav>
-          <section className="bg-[#1e1e1e] grow">
+          <section
+            className="bg-[#1e1e1e] flex-1 min-h-0 overflow-y-auto"
+            style={{ scrollbarColor: "#3c3c3c #1e1e1e" }}
+          >
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
