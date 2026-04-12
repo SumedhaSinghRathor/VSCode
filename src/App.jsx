@@ -12,7 +12,7 @@ import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Project from "./sections/Project";
 import Articles from "./sections/Articles";
-import Github from "./sections/Github";
+import Resume from "./sections/Resume";
 import Terminal from "./components/Terminal";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
     { file: Css, link: "/contact", fileName: "contact.css" },
     { file: Js, link: "/projects", fileName: "project.js" },
     { file: Json, link: "/articles", fileName: "articles.json" },
-    { file: MD, link: "/github", fileName: "github.md" },
+    { file: MD, link: "/resume", fileName: "resume.md" },
   ];
 
   const [terminal, setTerminal] = useState(false);
@@ -86,13 +86,13 @@ function App() {
             <i className="bx bx-folder text-4xl" />
           </NavLink>
           <NavLink
-            to="/github"
+            to="/resume"
             style={({ isActive }) => ({
               borderLeft: isActive ? "1px solid white" : "",
             })}
             className="p-2"
           >
-            <i className="bx bxl-github text-4xl" />
+            <i className="bx bxs-file-pdf text-4xl" />
           </NavLink>
           <NavLink
             to="/projects"
@@ -182,7 +182,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/projects" element={<Project />} />
                 <Route path="/articles" element={<Articles />} />
-                <Route path="/github" element={<Github />} />
+                <Route path="/resume" element={<Resume />} />
               </Routes>
             </div>
             <Terminal terminal={terminal} setTerminal={setTerminal} />
