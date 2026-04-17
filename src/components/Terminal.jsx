@@ -46,6 +46,7 @@ function Terminal({ terminal, setTerminal, height, setHeight }) {
   projects  - View my projects
   contact   - Contact Information
   date      - Show current date
+  cd        - Get all routes
   clear     - Clear terminal
   git       - Navigate to github`;
         break;
@@ -63,7 +64,9 @@ because I spend the most of time here anyway.`;
         const validRoutes = ["/", "/about", "/contact", "/projects", "/resume"];
 
         if (args.length === 0) {
-          output = `Available routes: \n${validRoutes.join("\n")}`;
+          output = `Available routes: \n${validRoutes.join(
+            "\n",
+          )} \nEnter cd <route> to navigate to the page`;
           break;
         }
 
