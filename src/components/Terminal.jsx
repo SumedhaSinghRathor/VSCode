@@ -89,7 +89,7 @@ because I spend the most of time here anyway.`;
         break;
 
       case "git":
-        window.location.replace("https://github.com/SumedhaSinghRathor");
+        globalThis.location.replace("https://github.com/SumedhaSinghRathor");
         break;
 
       case "projects":
@@ -172,7 +172,9 @@ Navigate to the contacts section to find more`;
     <div
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
-      className={`ide text-sm absolute w-full bottom-0 border border-dark-grey bg-grey z-10 ${!terminal && "hidden"}`}
+      className={`ide text-sm absolute w-full bottom-0 border border-dark-grey bg-grey z-10 ${
+        !terminal && "hidden"
+      }`}
       style={{ height }}
     >
       <div

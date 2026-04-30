@@ -5,11 +5,12 @@ function Project() {
     //   description: `What-is-Shoujo? is MERN stack web app that serves as a searchable database for Shoujo manga (demographic aimed at young women) with genre filters. It also acts as a personal reading tracker, letting users log progress, manage lists, and view detailed info.`,
     //   skills: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
     // },
-    // {
-    //   title: "ATS Resume Analyzer",
-    //   description: `An ATS (Applicant Tracking System) resume analyzer is a tool that simulates how employers' software scans and ranks your resume. It identifies issues that might cause your application to be automatically rejected, such as unreadable formatting or missing keywords.`,
-    //   skills: ["Streamlit", "FastAPI", "Ollama", "Langchain"],
-    // },
+    {
+      title: "AI Code Optimizer",
+      description: `This FastAPI project integrates the GitHub API to fetch source code and utilizes DeepSeek’s reasoning capabilities to analyze performance bottlenecks. It provides developers with automated, actionable refactoring suggestions specifically aimed at reducing algorithmic time and space complexity.`,
+      skills: ["Streamlit", "FastAPI", "DeepSeek", "Langchain"],
+      link: "https://github.com/SumedhaSinghRathor/AI-CodeOptimizer",
+    },
     {
       title: "random-react-projects",
       description: `A collection of diverse web projects brought to life with smooth, expressive animations using Framer Motion.`,
