@@ -34,9 +34,10 @@ function About() {
       designation: "Trainee Analyst",
       company: "Wissen Technology",
       description: [
-        `As an intern you will be working on some of the any of our company projects.`,
-        `You shall also be expected to perform duties which are customarily associated with such positions.`,
-        `The assignment details will be shared with you once you join.`,
+        "Developed and maintained responsive web application features using Angular, React, Java, and Spring Boot in an Agile development environment.",
+        "Collaborated with cross-functional teams to support frontend-backend integration, debugging, testing, and feature updates.",
+        "Worked on REST API integration and data handling to improve application functionality and user experience. Performed code reviews, issue resolution, and quality checks to ensure application reliability and maintainability.",
+        "Gained exposure to modern development tools and workflows including Docker, LangChain, LangGraph, and Claude.",
       ],
     },
   ];
